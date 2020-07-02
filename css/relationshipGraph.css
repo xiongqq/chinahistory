@@ -1,0 +1,49 @@
+html,body{
+    padding:0;
+    margin: 0;
+	width:100%;
+	height:100%;
+}
+.box{
+    
+    position: relative;
+    min-width: 1000px;
+	width:100%;
+	height:100%;
+}
+.text-center{
+    margin:10 auto;
+}
+.relation-container {
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /*background-image: linear-gradient(180deg,#2e3b4e,#0d0d13 52%,#0d0d13);*/
+    background-image: url("../img/relationshipGraphBG.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.mycvs{
+    position: absolute;
+    touch-action: none;
+    cursor: pointer;
+}
+.network-node-pop-panel{
+    display: none;
+    margin: 10px 30px 0 0;
+    position: fixed;
+	line-height:1.5em;
+    background: white;
+    width:100%;
+    height:120px;
+    bottom: 0;
+    animation: appear 1.5s;
+    animation-fill-mode: both;
+    overflow-x: hidden;
+}
+.pop-panel{
+    overflow: scroll;
+}

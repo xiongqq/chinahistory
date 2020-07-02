@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>内容介绍</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nivo-slider.css" />
+    <link rel="stylesheet" media="all" href="../css/responsive.css" />
+
+    <!--<script src="js/modernizr-2.6.1.min.js"></script>-->
+    <script src="../js/returnTXT.js"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        #selectDiv {
+            position: absolute;
+            display: none;
+            left: 38.5%;
+            top: 15%;
+            background-color: black;
+            color: white;
+            z-index: 100;
+            padding: 15px 20px 5px 20px;
+            opacity: 0.61;
+        }
+
+        .selectDiv_level3_enableClick {
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 0px;
+            outline: none;
+            cursor: pointer;         
+        }
+            .selectDiv_level3_enableClick:hover {
+                font-weight: 800;
+                color:sandybrown;
+            }
+
+
+        .selectDiv_level3_unableClick {
+            font-size: 15px;
+            font-weight: 800;
+            margin-top: 0px;
+            outline: none;
+            cursor: default;
+        }
+
+        .selectDiv_level4 {
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+
+            .selectDiv_level4 a {
+                float: left;
+                margin: 5px 5px 5px 5px;
+                outline: none;
+                cursor: pointer;
+            }
+            .selectDiv_level4 a:hover {
+                font-weight: 800;
+                color: sandybrown;
+            }
+
+    </style>
+</head>
+<body>
+    <!-- ENDS TOP -->
+    <!-- HEADER -->
+    <header class="cf">
+        <!-- nav -->
+        <nav class="cf" id="top_left_nav">
+
+            <!-- left nav -->
+            <ul id="left-nav" class="sf-menu" >
+                <li onmouseover="document.getElementById('selectDiv').style.display = 'block';" onmouseleave="document.getElementById('selectDiv').style.display = 'none';">
+                <a id="top_left_nav_a">分类</a>
+                </li>
+            </ul>
+            <!-- ends left nav -->
+            <!-- right nav -->
+            <ul id="right-nav" class="sf-menu">
+                <li><a href="javascript:history.go(-1)">返回</a></li>
+            </ul>
+            <!-- ENDS right nav -->
+
+        </nav>
+        <!-- nav -->
+        <!-- logo -->
+        <div id="logo">
+            <a><img id="logoImg" src="../img/传统文化.png" alt="" /></a>
+        </div>
+        <!-- ENDS logo -->
+    </header>
+    <!-- ENDS HEADER -->
+
+    <div id="selectDiv" onmouseleave="document.getElementById('selectDiv').style.display = 'none';" onmouseover="document.getElementById('selectDiv').style.display = 'block';">
+        
+    </div>
+
+
+    <!-- MAIN -->
+    <div id="main" role="main" class="cf">
+
+
+        <!-- SLIDER -->
+        <div class="slider-wrapper theme-default" style="float:left;padding-top:80px;">
+            <div id="slider1" class="nivoSlider1" style="float:left;">
+                <img id="slider1Img" src="../img/contentImg/defaultImg.jpg" alt=""
+                     style="" />
+                <!-- featured -->
+
+            </div>
+            <div style="float:left;left:0;position:relative;width:60%;padding-left: 25px;padding-top: 15px;">
+                <!-- tagline -->
+                <div id="titleDiv" class="tagline"></div>
+                <!-- ENDS tagline -->
+
+                <ul class="feature cf ">
+                    <div id="contentDiv">请点击“分类”摁钮搜寻相应内容</div>
+                </ul>
+            </div>
+            <!-- ENDS featured -->
+        </div>
+        <!-- ENDS SLIDER -->
+
+
+    </div>
+    <!-- ENDS MAIN -->
+    <!-- FOOTER -->
+    <footer class="cf"></footer>
+    <!-- ENDS FOOTER -->
+    <!-- ENDS javascripts -->
+
+
+</body>
+<script type="text/javascript">
+    var dynasty = getURLparameter("dynasty")||"东汉";
+    var level1 = getURLparameter("level1") ||"文化";
+    var level2 = getURLparameter("level2") ||"科学";
+    var level3 = getURLparameter("level3") ||"null";
+    var level4 = getURLparameter("level4") ||"null";
+    var ifContent = getURLparameter("ifContent") ||"null";
+    var hasFirstContent = false;
+    if (dynasty != "四个典型") {
+        document.getElementById("logoImg").src = "../img/" + dynasty + ".png";
+    }
+    else {
+        document.getElementById("logoImg").src = "../img/" + "logo" + ".png";
+    }
+    document.getElementById("selectDiv").style.top = (parseFloat(document.getElementById("top_left_nav").offsetTop) + parseFloat(document.getElementById("top_left_nav").offsetHeight)).toString() + "px";
+    //document.getElementById("selectDiv").style.left = document.getElementById("top_left_nav_a").offsetLeft+"px";
+    if (ifContent == "true") {
+        document.getElementById("selectDiv").style.display = "none";
+        document.getElementById("left-nav").style.display = "none";
+        if (level2 == "null" && level3 == "null" && level4 == "null") {//来自历史人物与四个典型内容
+            document.getElementById("titleDiv").innerHTML = level1.replace("。", "");
+            document.getElementById("contentDiv").innerHTML = showImg(returnTXTJsonByName(dynasty)[level1]);
+        }
+        else if (level3 == "null" && level4 == "null") {
+            document.getElementById("titleDiv").innerHTML = level2.replace("。", "");
+            document.getElementById("contentDiv").innerHTML = showImg(returnTXTJsonByName(dynasty)[level1][level2]);
+        }
+        else if (level4 == "null") {
+            document.getElementById("titleDiv").innerHTML = level3.replace("。", "");
+            document.getElementById("contentDiv").innerHTML = showImg(returnTXTJsonByName(dynasty)[level1][level2][level3]);
+        }
+        else {
+            document.getElementById("titleDiv").innerHTML = level4.replace("。", "");
+            document.getElementById("contentDiv").innerHTML = showImg(returnTXTJsonByName(dynasty)[level1][level2][level3][level4]);
+        }
+    }
+    else {
+        fillColumnDiv();
+    }
+
+    function fillColumnDiv() {
+        var columnDiv = document.getElementById("selectDiv");
+        columnDiv.innerHTML = "";
+
+        var columnDivList = returnTXTJsonByName(dynasty)[level1][level2];
+        if (level2 == "null" && level3 == "null" && level4 == "null") {//来自历史人物与四个典型内容
+            columnDivList = returnTXTJsonByName(dynasty)[level1];
+            if (typeof (columnDivList) == "string") {
+                document.getElementById("selectDiv").style.display = "none";
+                document.getElementById("left-nav").style.display = "none";
+                hasFirstContent = true;
+                document.getElementById("titleDiv").innerHTML = level1.replace("。","");
+                document.getElementById("contentDiv").innerHTML = showImg(columnDivList);
+            }
+            else if (typeof (columnDivList) == "object") {
+                for (title3 in columnDivList) {
+                    var div3 = document.createElement("div");
+                    var a3 = document.createElement("a");
+                    a3.innerHTML = title3.replace("。", "");
+                    content3 = columnDivList[title3];
+                    if (typeof (content3) == "string") {
+                        div3.setAttribute('class', 'selectDiv_level3_enableClick');
+                        a3.setAttribute('id', title3 + "_" + content3);
+                        div3.appendChild(a3);
+                        columnDiv.appendChild(div3);
+                        document
+                            .getElementById(title3 + "_" + content3)
+                            .addEventListener("click", function (event) {
+                                infoNowList = event.target.attributes.id.nodeValue.split("_");
+                                document.getElementById("titleDiv").innerHTML = infoNowList[0].replace("。", "");
+                                document.getElementById("contentDiv").innerHTML = showImg(infoNowList[1]);
+                                document.getElementById('selectDiv').style.display = 'none';
+                            });
+                        var j = 0;
+                        for (title33 in columnDivList) {
+                            j++;
+                        }
+                        if (j <= 10) {
+                            columnDiv.appendChild(document.createElement("br"));
+                        }
+                        if (hasFirstContent == false) {
+                            hasFirstContent = true;
+                            document.getElementById("titleDiv").innerHTML = title3.replace("。", "");
+                            document.getElementById("contentDiv").innerHTML = showImg(content3);
+                        }
+                    }
+                }
+            }
+        }
+        else if (level3 == "null" && level4 == "null") {
+            if (typeof (columnDivList) == "string") {
+                document.getElementById("selectDiv").style.display = "none";
+                document.getElementById("left-nav").style.display = "none";
+                hasFirstContent = true;
+                document.getElementById("titleDiv").innerHTML = level2.replace("。", "");
+                document.getElementById("contentDiv").innerHTML = showImg(columnDivList);
+            }
+            else if (typeof (columnDivList) == "object") {
+                for (title3 in columnDivList) {
+                    var div3 = document.createElement("div");
+                    var a3 = document.createElement("a");
+                    a3.innerHTML = title3.replace("。", "");
+                    content3 = columnDivList[title3];
+                    if (typeof (content3) == "string") {
+                        div3.setAttribute('class', 'selectDiv_level3_enableClick');
+                        a3.setAttribute('id', title3 + "_" + content3);
+                        div3.appendChild(a3);
+                        columnDiv.appendChild(div3);
+                        document
+                            .getElementById(title3 + "_" + content3)
+                            .addEventListener("click", function (event) {
+                                infoNowList = event.target.attributes.id.nodeValue.split("_");
+                                document.getElementById("titleDiv").innerHTML = infoNowList[0].replace("。", "");
+                                document.getElementById("contentDiv").innerHTML = showImg(infoNowList[1]);
+                                document.getElementById('selectDiv').style.display = 'none';
+                            });
+                        var j = 0;
+                        for (title33 in columnDivList) {
+                            j++;
+                        }
+                        if (j <= 10) {
+                            columnDiv.appendChild(document.createElement("br"));
+                        }
+                        if (hasFirstContent == false) {
+                            hasFirstContent = true;
+                            document.getElementById("titleDiv").innerHTML = title3.replace("。", "");
+                            document.getElementById("contentDiv").innerHTML = showImg(content3);
+                        }
+                    }
+                    else if (typeof (content3) == "object") {
+                        div3.setAttribute('class', 'selectDiv_level3_unableClick');
+                        div3.appendChild(a3);
+                        columnDiv.appendChild(div3);
+                        var div4 = document.createElement("div");
+                        div4.setAttribute('class', 'selectDiv_level4');
+                        for (title4 in content3) {
+                            var a4 = document.createElement("a");
+                            a4.setAttribute('id', title4 + "_" + content3[title4]);
+                            a4.setAttribute('class', 'selectDiv_level4');
+                            a4.innerHTML = title4.replace("。", "");
+                            div4.appendChild(a4);
+                        }
+                        columnDiv.appendChild(div4);
+                        for (title4 in content3) {
+                            document
+                                .getElementById(title4 + "_" + content3[title4])
+                                .addEventListener("click", function (event) {
+                                    infoNowList = event.target.attributes.id.nodeValue.split("_");
+                                    document.getElementById("titleDiv").innerHTML = infoNowList[0].replace("。", "");
+                                    document.getElementById("contentDiv").innerHTML = showImg(infoNowList[1]);
+                                    document.getElementById('selectDiv').style.display = 'none';
+                                });
+                            if (hasFirstContent == false) {
+                                hasFirstContent = true;
+                                document.getElementById("titleDiv").innerHTML = title4.replace("。", "");
+                                document.getElementById("contentDiv").innerHTML = showImg(content3[title4]);
+                            }
+                        }
+                        columnDiv.appendChild(document.createElement("br"));
+                        columnDiv.appendChild(document.createElement("br"));
+                    }
+                }
+            }
+        }
+    }
+    function showImg(content) {
+        if (content.indexOf("<img>")!=-1) {
+            var contentList = content.split("<img>");
+            if (contentList[1].indexOf("<video>")== -1){
+                document.getElementById("slider1Img").src = "../img/contentImg/" + contentList[1];
+            }
+            else {
+                document.getElementById("slider1Img").src = "../img/contentImg/" + contentList[1].split("<video>")[0];
+            }
+                return "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + contentList[0];
+        }
+        else {
+            document.getElementById("slider1Img").src = "../img/contentImg/defaultImg.jpg";
+            return "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + content;
+        }
+    }
+    function getURLparameter(parameterName) {
+        var urlParameter = location.search; //获取url中"?"符后的字串
+        if (urlParameter.indexOf(parameterName + "=") != -1) {
+            var parameterContent1 = urlParameter.split(parameterName + "=")[1];
+            if (parameterContent1.indexOf("&") != -1) {
+                return decodeURI(parameterContent1.split("&")[0]);
+            }
+            else {
+                return decodeURI(parameterContent1);
+            }
+        }
+        else {
+            return null;
+        }
+    }
+</script>
+
+</html >

@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>中国历史</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <script src="js/returnTXT.js"></script>
+</head>
+<body>
+    <div id="templatemo_container">
+        <div id="templatemo_banner">
+            <div id="search_section">
+                <input type="text" value="" 　placeholder="输入查找词" name="q" size="10" id="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
+                <div id="searchbutton" onclick="searchKeyword();">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+
+                <!--<form>
+                    <input type="text" value="" 　placeholder="输入查找词" name="q" size="10" id="searchfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
+                    <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" onclick="searchKeyword();" />
+                </form>-->
+            </div>
+
+        </div> <!-- end of banner -->
+
+        <div id="templatemo_menu">
+            <ul>
+                <li>
+                    <a onmouseover="xlk_click('ljcd')" onmouseleave="xlkHidden();">历届朝代</a>
+                    <div id="ljcd" style="display:none;" onmouseover="xlk_click('ljcd')" onmouseleave="xlkHidden();">
+                        <a href="page/map.html?dynasty=夏">夏朝</a>
+                        <a href="page/map.html?dynasty=商">商朝</a>
+                        <a href="page/map.html?dynasty=周">周朝</a>
+                        <a href="page/map.html?dynasty=春秋">春秋</a>
+                        <a href="page/map.html?dynasty=战国">战国</a>
+                        <a href="page/map.html?dynasty=秦">秦朝</a>
+                        <a href="page/map.html?dynasty=西汉">西汉</a>
+                        <a href="page/map.html?dynasty=东汉">东汉</a>
+                        <a href="page/map.html?dynasty=三国">三国</a>
+                        <a href="page/map.html?dynasty=西晋">西晋</a>
+                        <a href="page/map.html?dynasty=东晋">东晋</a>
+                        <a href="page/map.html?dynasty=南北朝">南北朝</a>
+                        <a href="page/map.html?dynasty=隋">隋朝</a>
+                        <a href="page/map.html?dynasty=唐">唐朝</a>
+                        <a href="page/map.html?dynasty=五代十国">五代十国</a>
+                        <a href="page/map.html?dynasty=北宋">北宋</a>
+                        <a href="page/map.html?dynasty=南宋">南宋</a>
+                        <a href="page/map.html?dynasty=元">元朝</a>
+                        <a href="page/map.html?dynasty=明">明朝</a>
+                        <a href="page/map.html?dynasty=清">清朝</a>
+                    </div>
+                </li>
+                <li>
+                    <a onmouseover="xlk_click('ctwh')" onmouseleave="xlkHidden();">传统文化</a>
+                    <div id="ctwh" style="display:none;"  onmouseover="xlk_click('ctwh')" onmouseleave="xlkHidden();">
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=文学&level2=null&level3=null&level4=null&ifContent=null">文学</a>
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=节日&level2=null&level3=null&level4=null&ifContent=null">节日</a>
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=民俗&level2=null&level3=null&level4=null&ifContent=null">民俗</a>
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=文字&level2=null&level3=null&level4=null&ifContent=null">文字</a>
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=艺术&level2=null&level3=null&level4=null&ifContent=null">艺术</a>
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=工艺&level2=null&level3=null&level4=null&ifContent=null">工艺</a>
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=传说&level2=null&level3=null&level4=null&ifContent=null">传说</a>
+                        <a href="page/contentPage.html?dynasty=传统文化&level1=宗教&level2=null&level3=null&level4=null&ifContent=null">宗教</a>
+                    </div>
+                </li>
+                <li>
+                    <a onmouseover="xlk_click('lsrw')" onmouseleave="xlkHidden();">历史名人</a>
+                    <div id="lsrw" style="display:none;" onmouseover="xlk_click('lsrw')" onmouseleave="xlkHidden();">
+                        <a href="page/contentPage2.html?level1=黄帝">黄帝</a>
+                        <a href="page/contentPage2.html?level1=仓颉">仓颉</a>
+                        <a href="page/contentPage2.html?level1=秦始皇">秦始皇</a>
+                        <a href="page/contentPage2.html?level1=孔子">孔子</a>
+                        <a href="page/contentPage2.html?level1=孟子">孟子</a>
+                        <a href="page/contentPage2.html?level1=老子">老子</a>
+                        <a href="page/contentPage2.html?level1=汉武帝">汉武帝</a>
+                        <a href="page/contentPage2.html?level1=蔡伦">蔡伦</a>
+                        <a href="page/contentPage2.html?level1=隋文帝">隋文帝</a>
+                        <a href="page/contentPage2.html?level1=朱熹">朱熹</a>
+                        <a href="page/contentPage2.html?level1=李鸿章">李鸿章</a>
+                    </div>
+                </li>
+                <li>
+                    <a onmouseover="xlk_click('ysls')" onmouseleave="xlkHidden();">影视历史</a>
+                    <div id="ysls" style="display:none;" onmouseover="xlk_click('ysls')" onmouseleave="xlkHidden();">
+                        <a href="page/movie.html">电影</a>
+                        <a href="page/teleplay.html">电视剧</a>
+                        <a href="page/documentary.html">纪录片</a>
+                    </div>
+                </li>
+                <li>
+                    <a onmouseover="xlk_click('tsls')" onmouseleave="xlkHidden();">图说历史</a>
+                    <div id="tsls" style="display:none;" onmouseover="xlk_click('tsls')" onmouseleave="xlkHidden();">
+                        <a href="page/map.html?dynasty=null">疆域演变</a>
+                        <a href="page/relationshipGraph.html">关系图谱</a>
+                        <a href="page/chronologicalTable.html">朝代纪年表</a>
+                    </div>
+                </li>
+            </ul>
+        </div> <!-- end of menu -->
+
+        <div id="templatemo_content_top" style="z-index:10;">
+
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=夏'">
+                <div class="header_01">
+                    夏朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/夏.jpg" alt="image" />
+                </div>
+                <p>中国史书中记载的第一个世袭制朝代，十七后，延续约471年为商朝所灭。后人常以“华夏”自称，使之成为中国的代名词</p>
+                <p>夏朝，历史上惯称为“夏”。这一称谓的来源有十种说法，其中较为可信的观点是“夏”为夏族图腾的象形字。</p>
+            </div>
+
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=商'">
+                <div class="header_01">
+                    商朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/商.jpg" alt="image" />
+                </div>
+                <p>中国历史上的第二个朝代，是中国第一个有直接的同时期的文字记载的王朝。 </p>
+                <p>商朝经历了三个大的阶段。第一阶段是“先商”；第二阶段是“早商”；第三阶段是“晚商”，前后相传17世31王，延续500余年。</p>
+            </div>
+
+            <div class="margin_bottom_20"></div>
+
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=周'">
+
+                <div class="header_01">
+                    周
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/西周.jpg" alt="image" />
+                </div>
+
+                <p>周是关中一个古老的部族，始祖名弃，善种植，尧舜时被封为“后稷”，封于邰。 </p>
+                <p>西周后期社会矛盾包括统治集团内部矛盾日趋激化，对土地以及政权的争夺，加速了西周的灭亡。</p>
+            </div>
+
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=春秋'">
+
+                <div class="header_01">
+                    春秋
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/春秋.jpg" alt="image" />
+                </div>
+                <p>春秋时代，是中国历史东周前半期历史阶段。</p>
+                <p>春秋时期开始于公元前770年（周平王元年）周平王东迁东周开始的一年，止于公元前476年（周敬王四十四年），战国前夕，总共295年。</p>
+            </div>
+            <div class="margin_bottom_40"></div>
+
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=战国'">
+
+                <div class="header_01">
+                    战国
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/战国.jpg" alt="image" />
+                </div>
+                <p>战国是中国历史上继春秋时期之后的大变革时期。经过春秋时期的旷日持久的争霸战争。</p>
+                <p>战国是中国的农业、纺织业、思想、科技、军事和政治发展的黄金时期。</p>
+            </div>
+
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=秦'">
+
+                <div class="header_01">
+                    秦朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/秦朝.jpg" alt="image" />
+                </div>
+                <p>秦朝（前221—前207）是由战国时期的秦国发展起来的中国历史上第一个大一统王朝。 </p>
+                <p>前361年，秦孝公继位，重用商鞅两次变法，使秦国的经济得到发展，军队战斗力不断加强，发展成为战国后期最富强的诸侯国。</p>
+            </div>
+
+            <div class="margin_bottom_40"></div>
+
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=西汉'">
+
+                <div class="header_01">
+                    西汉
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/西汉.jpg" alt="image" />
+                </div>
+
+                <p>西汉（公元前202年—公元8年）是中国历史上的大一统王朝。 </p>
+                <p>汉武帝继位后，推行推恩令、独尊儒术、加强中央集权。对外开拓朝鲜、南据越南、西逾葱岭、北达阴山，奠定汉朝基本疆域。</p>
+            </div>
+
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=东汉'">
+
+                <div class="header_01">
+                    东汉
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/东汉.jpg" alt="image" />
+                </div>
+                <p>东汉（25年—220年）是中国历史上继西汉之后又一个大一统的中原王朝。</p>
+                <p>东汉传八世共十四帝，享国一百九十五年，与西汉统称汉朝，新朝末年爆发绿林赤眉起义，汉朝宗室刘秀趁势而起。公元25年，刘秀称帝，。</p>
+            </div>
+            <div class="margin_bottom_20 b_bottom"></div>
+            <div class="cleaner"></div>
+        </div>
+
+        <div id="templatmeo_content_bottom" onclick="window.location.href='page/map.html?dynasty=三国'">
+            <div class="section_w335 fl margin_right_40">
+
+                <div class="header_01">
+                    三国
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/三国.jpg" alt="image" />
+                </div>
+                <p>三国（220年－280年）是上承东汉下启西晋的一段历史时期，分为曹魏、蜀汉、东吴三个政权。 </p>
+                <p>公元280年，西晋灭东吴，统一中国，至此三国时期结束，进入晋朝时期。</p>
+            </div>
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=西晋'">
+
+                <div class="header_01">
+                    西晋
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/西晋.jpg" alt="image" />
+                </div>
+                <p>西晋（265年—316年），是中国历史上三国时期之后的统一王朝。 </p>
+                <p>自西晋建立，政风十分黑暗，贪赃枉法，贿赂风行。西晋时期面临的外部局势是大量游牧部落内迁。</p>
+            </div>
+            <div class="margin_bottom_40"></div>
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=东晋'">
+
+                <div class="header_01">
+                    东晋
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/东晋.jpg" alt="image" />
+                </div>
+                <p>东晋（317年－420年），是由西晋皇族司马睿南迁后建立起来的偏安政权。 </p>
+                <p>史书中又仿东汉称中汉，称东晋为中晋，寓以晋室中兴之意；又东晋统治地区大部分在江东，古称江左，因此以江左代指东晋。</p>
+            </div>
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=南北朝'">
+                <div class="header_01">
+                    南北朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/南北朝.jpg" alt="image" />
+                </div>
+                <p>南北朝（420年—589年）是南朝和北朝的统称。南北朝时期是中国历史上的一段大分裂时期。 </p>
+                <p>南北朝是中国历史上的一段民族大融合时期，上承东晋十六国下接隋朝，由公元420年刘裕代东晋建立刘宋始，至公元589年隋灭陈而终。</p>
+            </div>
+            <div class="margin_bottom_40 b_bottom"></div>
+            <br /></br>
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=隋朝'">
+
+                <div class="header_01">
+                    隋朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/隋朝.jpg" alt="image" />
+                </div>
+                <p>隋朝（581——619）是中国历史上承南北朝下启唐朝的大一统朝代。</p>
+                <p>隋朝在政治、经济、文化和外交等领域进行大刀阔斧的改革。</p>
+            </div>
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=唐朝'">
+
+                <div class="header_01">
+                    唐朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/唐朝.jpg" alt="image" />
+                </div>
+                <p>唐朝（618年—907年），是继隋朝之后的大一统中原王朝，共历二十一帝，享国二百八十九年。 </p>
+                <p>唐朝时万国来朝达到鼎盛，向其朝贡之国多达三百余，疆域空前辽阔，是中国自秦以来第一个未修据胡长城的大一统王朝。</p>
+            </div>
+            <div class="margin_bottom_40"></div>
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=五代十国'">
+
+                <div class="header_01">
+                    五代十国
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/五代十国.jpg" alt="image" />
+                </div>
+                <p>五代十国（907年—960年）是中国历史上的一段大分裂时期。</p>
+                <p>五代是指907年唐朝灭亡后依次定都于中原地区的五个朝代，即后梁、后唐、后晋、后汉和后周。</p>
+            </div>
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=北宋'">
+
+                <div class="header_01">
+                    北宋
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/北宋.jpg" alt="image" />
+                </div>
+                <p>北宋（960—1127年）是中国历史上继五代十国之后的朝代，传九位皇帝，享国167年。与南宋合称宋朝，又称两宋。 </p>
+                <p>显德七年（960年），后周诸将发动陈桥兵变，拥立赵匡胤为帝，建立宋朝，宋朝政治体制大体沿袭唐朝，</p>
+            </div>
+            <div class="margin_bottom_40"></div>
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=南宋'">
+
+                <div class="header_01">
+                    南宋
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/南宋.jpg" alt="image" />
+                </div>
+                <p>南宋（1127－1279年），中国历史上的朝代，北宋覆亡后，赵构在南京应天府（今河南商丘）称帝。 </p>
+                <p>与北宋统称为宋朝，共传五世九帝，享国一百五十二年。</p>
+            </div>
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=元'">
+
+                <div class="header_01">
+                    元朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/元朝.jpg" alt="image" />
+                </div>
+                <p>元朝（1271年—1368年），是中国历史上首次由少数民族建立的大一统王朝，统治者为蒙古孛儿只斤氏。 </p>
+                <p>元朝传五世十一帝，从1206年成吉思汗建立蒙古政权始为162年，从忽必烈定国号元开始历时98年。元朝退出中原后的北元政权一直持续到1402年。</p>
+            </div>
+            <div class="margin_bottom_40"></div>
+            <div class="section_w335 fl margin_right_40" onclick="window.location.href='page/map.html?dynasty=明'">
+
+                <div class="header_01">
+                    明朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/明朝.jpg" alt="image" />
+                </div>
+                <p>中国历史上一个由汉族建立的王朝，初期建都南京，明成祖时期定都北京。传十六帝，共计276年。 </p>
+                <p>明朝时期君主专制空前加强，多民族国家也进一步统一和巩固。明代手工业和商品经济繁荣， 出现商业集镇和资本主义萌芽。</p>
+            </div>
+
+            <div class="section_w335 fl" onclick="window.location.href='page/map.html?dynasty=清'">
+
+                <div class="header_01">
+                    清朝
+                </div>
+                <div class="image_wrapper">
+                    <img src="img/mainPageImg/清朝.jpg" alt="image" />
+                </div>
+                <p>清朝（1636年—1912年），是中国历史上最后一个封建王朝，共传十二帝，统治者为满洲爱新觉罗氏。 </p>
+                <p>从努尔哈赤建立后金起，总计296年。从皇太极改国号为清起，国祚276年。从清兵入关，建立全国性政权算起为268年。</p>
+            </div>
+            <div class="cleaner"></div>
+
+        </div> <!-- end of content top -->
+        <!-- <div id="templatemo_footer"> -->
+        <!-- </div> -->
+
+        <div class="cleaner"></div>
+    </div> <!-- end of content bottom -->
+    </div> <!-- end of container -->
+    <!--  Free Website Templates @ TemplateMo.com  -->
+    <div style="display:none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
+    <script language="javascript" type="text/javascript">
+        var timeList = ["夏", "商", "周", "春秋", "战国", "秦", "西汉", "东汉", "三国", "西晋", "东晋", "南北朝", "隋", "唐", "五代十国", "北宋", "南宋", "元", "明", "清"]
+        function searchKeyword() {
+            for (var i = 0; i < timeList.length; i++) {
+                var keyword = document.getElementById("searchfield").value.toString().trim();
+                if (keyword == "") {
+                    alert("输入的关键词为空");
+                    return;
+                }
+                var contentList = returnTXTJsonByName(timeList[i]);
+                for (level1 in contentList) {
+                    if (typeof (contentList[level1]) == "string" && level1 == keyword) {
+                        window.location.href = "page/contentPage.html?dynasty=" + timeList[i] + "&level1=" + level1 + "&level2=null&level3=null&level4=null&ifContent=true";
+                        return;
+                    }
+                    else if (typeof (contentList[level1]) == "object"){
+                        for (level2 in contentList[level1]) {
+                            if (typeof (contentList[level1][level2]) == "string" && level2 == keyword) {
+                                window.location.href = "page/contentPage.html?dynasty=" + timeList[i] + "&level1=" + level1 + "&level2=" + level2 + "&level3=null&level4=null&ifContent=true";
+                                return;
+                            }
+                            else if (typeof (contentList[level1][level2]) == "object"){
+                                for (level3 in contentList[level1][level2]) {
+                                    if (typeof (contentList[level1][level2][level3]) == "string" && level3 == keyword) {
+                                        window.location.href = "page/contentPage.html?dynasty=" + timeList[i] + "&level1=" + level1 + "&level2=" + level2 + "&level3=" + level3 + "&level4=null&ifContent=true";
+                                        return;
+                                    }
+                                    else if (typeof (contentList[level1][level2][level3]) == "object"){
+                                        for (level4 in contentList[level1][level2][level3]) {
+                                            //console.log(level1 + level2 + level3 + level4);
+                                            if (typeof (contentList[level1][level2][level3][level4]) == "string" && level4 == keyword) {
+                                                window.location.href = "page/contentPage.html?dynasty=" + timeList[i] + "&level1=" + level1 + "&level2=" + level2 + "&level3=" + level3 + "&level4=" + level4 + "&ifContent=true";
+                                                return;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+                alert("未搜索到相关内容，将跳转百度百科搜索。");
+                window.location.href = "https://baike.baidu.com/item/" + keyword;
+                return;
+        }
+
+
+        function clearText(field) {
+            if (field.defaultValue == field.value) field.value = '';
+            else if (field.value == '') field.value = field.defaultValue;
+        }
+        function xlkHidden() {
+            document.getElementById("ljcd").style.display = "none";
+            document.getElementById("ctwh").style.display = "none";
+            document.getElementById("lsrw").style.display = "none";
+            document.getElementById("ysls").style.display = "none";
+            document.getElementById("tsls").style.display = "none";
+        }
+        function xlk_click(xlkID) {
+            xlkHidden();
+            if (document.getElementById(xlkID).style.display == "none")
+                document.getElementById(xlkID).style.display = "block";
+            else
+                document.getElementById(xlkID).style.display = "none";
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>人物介绍</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nivo-slider.css" />
+    <link rel="stylesheet" media="all" href="../css/responsive.css" />
+    <script src="../js/returnTXT.js"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <!-- ENDS TOP -->
+    <!-- HEADER -->
+    <header class="cf">
+        <!-- nav -->
+        <nav class="cf">
+
+            <!-- left nav -->
+            <ul id="left-nav" class="sf-menu">
+                <li><a onclick="updateTitleContent('作品');">作品</a></li>
+                <li><a onclick="updateTitleContent('介绍');">介绍</a></li>
+            </ul>
+            <!-- ends left nav -->
+            <!-- right nav -->
+            <ul id="right-nav" class="sf-menu">
+                <li><a onclick="updateTitleContent('生平');">生平</a></li>
+                <li><a onclick="updateTitleContent('事迹');">事迹</a></li>
+                <li><a href="javascript:history.go(-1)">返回</a></li>
+            </ul>
+            <!-- ENDS right nav -->
+
+        </nav>
+        <!-- nav -->
+        <!-- logo -->
+        <div id="logo">
+            <a><img src="../img/历史名人.png" alt="" /></a>
+        </div>
+        <!-- ENDS logo -->
+    </header>
+    <!-- ENDS HEADER -->
+    <!-- MAIN -->
+    <div id="main" role="main" class="cf">
+
+
+        <!-- SLIDER -->
+        <div class="slider-wrapper theme-default" style="float:left;padding-top:80px;">
+            <div id="slider1" class="nivoSlider1" style="float:left;">
+                <img id="slider1Img" src="../img/contentImg/defaultImg.jpg" alt=""
+                     style="display:none;" />
+                <video id="slider1Video" src="http://vd2.bdstatic.com/mda-jipj4xuaiccgejum/sc/mda-jipj4xuaiccgejum.mp4"/>
+"
+                <!-- featured -->
+
+            </div>
+            <div style="float:left;left:0;position:relative;width:60%;padding-left: 25px;padding-top: 15px;">
+                <!-- tagline -->
+                <div id="titleDiv" class="tagline"></div>
+                <!-- ENDS tagline -->
+
+                <ul class="feature cf ">
+                    <div id="contentDiv">请点击“分类”摁钮搜寻相应内容</div>
+                </ul>
+            </div>
+            <!-- ENDS featured -->
+        </div>
+        <!-- ENDS SLIDER -->
+
+
+    </div>
+    <!-- ENDS MAIN -->
+    <!-- FOOTER -->
+    <footer class="cf"></footer>
+    <!-- ENDS FOOTER -->
+    <script type="text/javascript">
+        var level1 = getURLparameter("level1") || "黄帝";
+        showImg(returnTXTJsonByName("历史人物")[level1]["介绍"]);
+        updateTitleContent("介绍");
+        function updateTitleContent(type) {
+            var contentList = returnTXTJsonByName("历史人物")[level1];
+            for (title in contentList) {
+                if (title == type) {
+                    document.getElementById("titleDiv").innerHTML = level1 + "&nbsp&nbsp&nbsp" + type
+                    document.getElementById("contentDiv").innerHTML =contentList[title].split("<img>")[0];
+                }
+            }
+        }
+        function showImg(content) {
+            if (content.indexOf("<img>") != -1) {
+                var contentList = content.split("<img>");
+                document.getElementById("slider1Img").src = "../img/contentImg/" + contentList[1];
+                return "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + contentList[0];
+            }
+            else {
+                document.getElementById("slider1Img").src = "../img/contentImg/defaultImg.jpg";
+                return "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + content;
+            }
+        }
+        function getURLparameter(parameterName) {
+            var urlParameter = location.search; //获取url中"?"符后的字串
+            if (urlParameter.indexOf(parameterName + "=") != -1) {
+                var parameterContent1 = urlParameter.split(parameterName + "=")[1];
+                if (parameterContent1.indexOf("&") != -1) {
+                    return decodeURI(parameterContent1.split("&")[0]);
+                }
+                else {
+                    return decodeURI(parameterContent1);
+                }
+            }
+            else {
+                return null;
+            }
+        }
+
+    </script>
+
+
+</body>
+</html >

@@ -1,0 +1,291 @@
+﻿body, html {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #E8E8E8;
+    cursor: default;
+}
+
+/*#topDiv-----------*/
+#topDiv {
+    position:relative;
+    height: 5.4%;
+    line-height: 40px;
+    z-index:100;
+}
+
+#titleDiv {
+    height: 100%;
+    width: 10%;
+    float: left;
+    color: white;
+    background:#F2A517;
+    min-height: 55px;
+    line-height: 46px;
+    font-size: 25px;
+    /*font: 25px/1.5 'microsoft yahei',"\5B8B\4F53",serif;*/
+    /* background1: -webkit-linear-gradient(top,rgba(37, 76, 168, 0.95) 2%,rgba(28, 59, 145, 1) 100%); */
+    /* background-image: -webkit-linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    /* background-image: -moz-linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    /* background-image: linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#4578d4', StartColorStr='#3467b7');
+}
+
+
+#columnDiv {
+    height: 100%;
+    float: left;
+    width: 75%;
+    line-height: 50px;
+    background: #F2A517;
+    min-height: 55px;
+    font-size: 16px;
+    box-shadow: 0px 3px 0px rgba(37, 76, 168, 0.15);
+    /* background1: -webkit-linear-gradient(top,rgba(37, 76, 168, 0.95) 2%,rgba(28, 59, 145, 1) 100%); */
+    /* background-image: -webkit-linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    /* background-image: -moz-linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    /* background-image: linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#4578d4', StartColorStr='#3467b7');
+}
+
+#searchDiv {
+    height: 100%;
+    float: left;
+    width: 14%;
+	background: #F2A517;
+    padding-top: 15px;
+    padding-left: 10px;
+    box-shadow: 0px 3px 0px rgba(37, 76, 168, 0.15);
+    /* background1: -webkit-linear-gradient(top,rgba(37, 76, 168, 0.95) 2%,rgba(28, 59, 145, 1) 100%); */
+    /* background-image: -webkit-linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    /* background-image: -moz-linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    /* background-image: linear-gradient(top, #4578d4 15%, #3467b7 100%); */
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, EndColorStr='#4578d4', StartColorStr='#3467b7');
+}
+
+    #searchDiv input {
+        float: left;
+        color: grey;
+        padding-left:7px;
+    }
+
+    #searchDiv img {
+        height: 20px;
+        width: 20px;
+        float: left;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+.columnDiv_ele {
+    float: left;
+    width: 16%;
+    height: 100%;
+    display: inline-block;
+    _dispaly: inline-block !important;
+    color: #f2f2f2;
+    text-shadow: 0 1px 0px #222;
+    border: 1px solid transparent;
+    border-width: 0 1px;
+    _border-color: tomato;
+}
+
+    .columnDiv_ele:hover {
+        background:#808080;
+        background: rgba(0,0,0,0.3);
+        display: inline-block;
+        border-right: 1px solid rgba(0,0,0,0.18);
+        border-left: 1px solid rgba(0,0,0,0.18);
+        cursor: pointer;
+    }
+
+#columnDiv ul {
+    margin: 0px;
+    list-style: none;
+    z-index: 100;
+}
+
+    #columnDiv ul li {
+        float: left;
+        z-index: 100;
+        width:16%;
+    }
+
+        #columnDiv ul li a {
+            float: left;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            _dispaly: inline-block !important;
+            text-decoration: none;
+            color: #f2f2f2;
+            text-shadow: 0 1px 0px #222;
+            border: 1px solid transparent;
+            border-width: 0 1px;
+            _border-color: tomato;
+            line-height: 53px;
+            font-size: 20px;
+        }
+
+
+        #columnDiv ul li div a {
+            display: block;
+            width: 100%;
+            margin-right: 5px;
+            height: 40px;
+            line-height: 40px;
+            padding-top: 0px;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: none;
+            color: #F8A114;
+            font-weight: bold;
+            outline: none;
+            background-color: #F7F7F7;
+			opacity:0.8;
+            z-index: 100;
+        }
+
+#columnDiv li a:hover, #columnDiv li .current {
+    background: #CFB993;
+}
+/*#centerDiv-----------*/
+#centerDiv {
+    position: relative;
+    float: left;
+    height: 90%;
+    width: 100%;
+    z-index: 0;
+}
+
+#timeDiv {
+    float: left;
+    padding: 0;
+    height: 100%;
+    width: 8%;
+    left: 0px;
+    text-shadow: 0 0.2px 0px #222;
+    font-weight: 900;
+    background-color: #F2A517;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.timeDiv_ele {
+    width: 100%;
+    line-height: 26.5px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+}
+
+    .timeDiv_ele:hover {
+        background-color: #CFB993;
+        cursor: pointer;
+    }
+
+.timeDiv_ele_onclick {
+    width: 100%;
+    line-height: 26.5px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    background-color: #CFB993;
+            cursor: pointer;
+
+}
+
+#viewDiv {
+    float: left;
+    left: 10%;
+    height: 100%;
+    width: 72%;
+}
+
+.mapDiv {
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+#switchBtnDiv {
+    top: 3.9%;
+    right: 22%;
+    width: 5.5%;
+    height: 31px;
+    background-color: white;
+    float: right;
+    position: absolute;
+    cursor: pointer;
+}
+
+    #switchBtnDiv img {
+        position: relative;
+        top:10%;
+        height: 80%;
+        width: 29%;
+        float: left;
+        left: 3%;
+    }
+
+    #switchBtnDiv div {
+        position: relative;
+        height: 100%;
+        width: 63%;
+        float: left;
+        top: 22%;
+        font-size: 11px;
+        font-weight: 400;
+        left: 4%;
+    }
+
+#timeAxisDiv {
+    top: 90%;
+    height: 10%;
+    width: 100%;
+}
+
+#pictureDiv {
+    float: left;
+    padding-top: 3px;
+    margin: 0;
+    height: 100%;
+    width: 20%;
+    left: 0px;
+}
+
+    #pictureDiv div {
+        width: 96%;
+        height: 23.9%;
+        margin-bottom: 6px;
+    }
+
+        #pictureDiv div:hover {
+            background-color: #D1D1D1;
+            width: 96%;
+            color: #8B0000;
+            cursor: pointer;
+        }
+
+    #pictureDiv div img {
+        margin-bottom: 3px;
+        height: 78%;
+        width:96%;
+    }
+
+        #pictureDiv div:hover img {
+            margin-bottom: 0px;
+            height: 80%;
+        }
+
+    #pictureDiv div label {
+        width: 96%;
+        height: 22%;
+        margin-top: 7px;
+        font-size: 15px;
+    }
+

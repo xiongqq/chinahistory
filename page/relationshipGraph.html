@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>历史图</title>
+
+        <link rel="stylesheet" href="../css/relationshipGraph.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="box">
+            <div class="relation-container">
+                <canvas id="myCanvas" class="mycvs" width="3620" height="1380"></canvas>
+            </div>
+            <div id="content"  class="network-node-pop-panel">
+                <divclass="pop-panel"></div>
+            </div>            
+        </div>
+        <div style="position: absolute;left: 93%;top: 5%;height: 29px;width: 57px;background-color:burlywood;cursor: pointer;text-align: center;line-height: 29px;font-weight: 600;" onClick="javascript :history.back(-1);">返回</div>
+        <script src="../js/relationshipGraph.js"></script>
+    </body>
+</html>

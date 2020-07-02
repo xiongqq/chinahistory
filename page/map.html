@@ -1,0 +1,116 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>中国历史</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css" />
+    <link rel="stylesheet" href="../css/map.css" />
+    <script src="https://js.arcgis.com/4.13/"></script>
+    <script src="../js/returnShp.js"></script>
+    <script src="../js/returnTXT.js"></script>
+    <script src="../js/map.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="http://www.jq22.com/demo/rangeTime201707221025/jquery-range/jquery.range.css" />
+ 
+</head>
+<body>
+    <div id="topDiv">
+        <div id="titleDiv">中国历史</div>
+        <div id="columnDiv">
+            <ul>
+                <li>
+                    <a href="../mainPage.html" alt="返回首页">首页</a>
+                </li>
+                <li>
+                    <a id="政治a" onmouseover="xlk_click('政治')" onmouseleave="xlkHidden();">政治</a>
+                    <div id="政治" style="display:none;" onmouseleave="xlkHidden();" onmouseover="xlk_click('政治')">
+                    </div>
+                </li>
+                <li>
+                    <a id="经济a" onmouseover="xlk_click('经济')" onmouseleave="xlkHidden();">经济</a>
+                    <div id="经济" style="display:none;" onmouseleave="xlkHidden();" onmouseover="xlk_click('经济')">
+                    </div>
+                </li>
+                <li>
+                    <a id="军事a" onmouseover="xlk_click('军事')" onmouseleave="xlkHidden();">军事</a>
+                    <div id="军事" style="display:none;" onmouseleave="xlkHidden();" onmouseover="xlk_click('军事')">
+                    </div>
+                </li>
+                <li>
+                    <a id="文化a" onmouseover="xlk_click('文化')" onmouseleave="xlkHidden();">文化</a>
+                    <div id="文化" style="display:none;" onmouseleave="xlkHidden();" onmouseover="xlk_click('文化')">
+                    </div>
+                </li>
+                <li>
+                    <a id="社会a" onmouseover="xlk_click('社会')" onmouseleave="xlkHidden();">社会</a>
+                    <div id="社会" style="display:none;" onmouseleave="xlkHidden();" onmouseover="xlk_click('社会')">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="searchDiv">
+            <input id="searchDiv_input" type="text" placeholder="输入关键字" style="width:150px;">
+            <img src="http://n2.static.pg0.cn/www/common/base/image/chinaso_search_ico.png"  onclick="searchKeyword();"/>
+        </div>
+    </div>
+    <div id="centerDiv">
+        <div id="timeDiv"></div>
+        <div id="viewDiv">
+            <div id="mapDiv2D" class="mapDiv"></div>
+            <div id="mapDiv3D" class="mapDiv"></div>
+            <div id="switchBtnDiv" onclick="switch2Dor3D()" style="width:6.5%;">
+                <img src="http://pic.51yuansu.com/pic2/cover/00/34/59/5811738d8e032_610.jpg">
+                <div>切换地图</div>
+            </div>
+            <!--<div id="timeAxisDiv">
+                <div class="clearfix">
+                    <div class="">
+                        <input type="hidden" value="" class="single-slider none">
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <div id="pictureDiv">
+            <!--<div>
+                <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=378989635,3915759041&fm=26&gp=0.jpg">
+                <label>夏朝的建立</label>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572782562271&di=6676acaf82a1608d6d8edbd0e26170d3&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw640h429%2F20180126%2Fe769-fyqzcxf6784659.jpg">
+                <label>夏朝的统治者</label>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572782562270&di=4cdb135b9c8533f1ce130f2581e0e2f8&imgtype=0&src=http%3A%2F%2Fp9.qhimg.com%2Ft01048ebf3bf9922098.jpg">
+                <label>夏朝的建筑</label>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572783400631&di=b5f32d866b984db666ea2c2a1c095698&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn17%2F330%2Fw640h490%2F20180727%2Ffaa6-hfvkitx8919632.jpg">
+                <label>夏朝的疆域</label>
+            </div>-->
+        </div>
+    </div>
+    <!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+    <!--<script type="text/javascript" src="http://www.jq22.com/demo/rangeTime201707221025/jquery-range/jquery.range.js"></script>-->
+    <script language="javascript" type="text/javascript">
+        var columnDivList = ["政治", "经济", "军事", "文化", "社会"]
+
+        function clearText(field) {
+            if (field.defaultValue == field.value) field.value = '';
+            else if (field.value == '') field.value = field.defaultValue;
+        }
+        function xlkHidden() {
+            for (var i = 0; i < columnDivList.length;i++) {
+                document.getElementById(columnDivList[i]).style.display = "none";
+            }
+        }
+        function xlk_click(xlkID) {
+            xlkHidden();
+            if (document.getElementById(xlkID).style.display == "none")
+                document.getElementById(xlkID).style.display = "block";
+            else
+                document.getElementById(xlkID).style.display = "none";
+        }
+    </script>
+</body>
+</html>
